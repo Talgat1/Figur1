@@ -262,13 +262,13 @@ namespace Figur1
             // 
             // button11_line
             // 
-            this.button11_line.Location = new System.Drawing.Point(185, 200);
+           /* this.button11_line.Location = new System.Drawing.Point(185, 200);
             this.button11_line.Name = "button11_line";
             this.button11_line.Size = new System.Drawing.Size(102, 29);
             this.button11_line.TabIndex = 7;
             this.button11_line.Text = "Line";
             this.button11_line.UseVisualStyleBackColor = true;
-            this.button11_line.Click += new System.EventHandler(this.button11_Click);
+            this.button11_line.Click += new System.EventHandler(this.button11_Click);*/
             // 
             // Form1
             // 
