@@ -262,7 +262,7 @@ namespace Figur1
             // 
             // button11_line
             // 
-           /* this.button11_line.Location = new System.Drawing.Point(185, 200);
+            /*this.button11_line.Location = new System.Drawing.Point(185, 200);
             this.button11_line.Name = "button11_line";
             this.button11_line.Size = new System.Drawing.Size(102, 29);
             this.button11_line.TabIndex = 7;

@@ -82,20 +82,27 @@ namespace Figur1
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             isMouse = true;
-            if (crc_OK == true && rec_OK == false)
+            if ((crc_OK == true) && (rec_OK == false))
             {
                 isMouse = false;
                 firstp = e.Location;
                 Graphics gr = pictureBox1.CreateGraphics();
                 gr.DrawEllipse(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);                
             }
-            else if (rec_OK == true && crc_OK == false)
+            else if ((rec_OK == true) && (crc_OK == false) )
             {
                 isMouse = false;
                 firstp = e.Location;
                 Graphics gr = pictureBox1.CreateGraphics();
                 gr.DrawRectangle(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);                
             }
+            /*else if ((rec_OK == false) && (crc_OK == false) && (line_OK = true))
+            {
+                isMouse = false;
+                firstp = e.Location;
+                Graphics gr = pictureBox1.CreateGraphics();
+                gr.DrawLine(pen, e.X - firstp.X, e.Y - firstp.Y, e.X, e.Y);
+            }*/
             else 
             {
                 return;
@@ -105,20 +112,27 @@ namespace Figur1
         {
             isMouse = false;
             arrayPoints.ResetPoints();
-            if (crc_OK == true && rec_OK == false)
+            if ((crc_OK == true) && (rec_OK == false))
             {                
                 Graphics gr = pictureBox1.CreateGraphics();
                 gr.DrawEllipse(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);               
                 crc_OK = false;
                 
             }            
-            else if (rec_OK == true && crc_OK == false)
+            else if ((rec_OK == true) && (crc_OK == false))
             {
                 Graphics gr = pictureBox1.CreateGraphics();
                 gr.DrawRectangle(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);               
-                rec_OK = false;
-                
+                rec_OK = false;               
             }
+            /*else if ((rec_OK == false) && (crc_OK == false) && (line_OK = true))
+            {
+                isMouse = false;
+
+                Graphics gr = pictureBox1.CreateGraphics();
+                gr.DrawLine(pen, e.X - firstp.X, e.Y - firstp.Y, e.X, e.Y);
+                line_OK = false;
+            }*/
             else 
             { 
                 return;                
