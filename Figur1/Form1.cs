@@ -74,35 +74,36 @@ namespace Figur1
         }
         Point firstp = new Point();
         private bool isMouse = false;
-        //private bool line_OK = false;
-        /*private void button11_Click(object sender, EventArgs e)
+        private void button11_add_trs_Click(object sender, EventArgs e)
         {
-            line_OK = true;
-        }*/
+            Point[] points = new Point[3];
+            points[0].X = 10; points[0].Y = 10;
+            points[1].X = 200; points[1].Y = 20;
+            points[2].X = 30; points[2].Y = 60;
+            Bitmap map = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            using (Graphics grfx = Graphics.FromImage(map))
+            {
+                grfx.DrawPolygon(pen, points);
+            }
+            pictureBox1.Image = map;
+        }
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             isMouse = true;
-            if ((crc_OK == true) && (rec_OK == false))
+            if (crc_OK == true) 
             {
                 isMouse = false;
                 firstp = e.Location;
                 Graphics gr = pictureBox1.CreateGraphics();
                 gr.DrawEllipse(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);                
             }
-            else if ((rec_OK == true) && (crc_OK == false) )
+            else if (rec_OK == true) 
             {
                 isMouse = false;
                 firstp = e.Location;
                 Graphics gr = pictureBox1.CreateGraphics();
                 gr.DrawRectangle(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);                
-            }
-            /*else if ((rec_OK == false) && (crc_OK == false) && (line_OK = true))
-            {
-                isMouse = false;
-                firstp = e.Location;
-                Graphics gr = pictureBox1.CreateGraphics();
-                gr.DrawLine(pen, e.X - firstp.X, e.Y - firstp.Y, e.X, e.Y);
-            }*/
+            }           
             else 
             {
                 return;
@@ -112,27 +113,18 @@ namespace Figur1
         {
             isMouse = false;
             arrayPoints.ResetPoints();
-            if ((crc_OK == true) && (rec_OK == false))
+            if (crc_OK == true) 
             {                
                 Graphics gr = pictureBox1.CreateGraphics();
-                gr.DrawEllipse(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);               
-                crc_OK = false;
-                
+                gr.DrawEllipse(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);
+                crc_OK = false;                
             }            
-            else if ((rec_OK == true) && (crc_OK == false))
+            else if (rec_OK == true)
             {
                 Graphics gr = pictureBox1.CreateGraphics();
-                gr.DrawRectangle(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);               
+                gr.DrawRectangle(pen, firstp.X, firstp.Y, e.X - firstp.X, e.Y - firstp.Y);
                 rec_OK = false;               
-            }
-            /*else if ((rec_OK == false) && (crc_OK == false) && (line_OK = true))
-            {
-                isMouse = false;
-
-                Graphics gr = pictureBox1.CreateGraphics();
-                gr.DrawLine(pen, e.X - firstp.X, e.Y - firstp.Y, e.X, e.Y);
-                line_OK = false;
-            }*/
+            }            
             else 
             { 
                 return;                
@@ -167,16 +159,23 @@ namespace Figur1
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.Filter = "(*.JPG)|*.jpg";
-            if (saveFileDialog1.ShowDialog()== DialogResult.OK)
+            saveFileDialog1.Filter = "JPG(*.JPG)|*.jpg";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                if(pictureBox1.Image == null)
+                if (pictureBox1.Image != null)
                 {
                     pictureBox1.Image.Save(saveFileDialog1.FileName);
                 }
             }
         }
 
-        
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pen.Color = colorDialog1.Color;
+                ((Button)sender).BackColor = colorDialog1.Color;
+            }
+        }
     }
 }

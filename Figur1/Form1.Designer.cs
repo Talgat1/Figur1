@@ -46,9 +46,10 @@ namespace Figur1
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button11_add_trs = new System.Windows.Forms.Button();
             this.button12_add_rec = new System.Windows.Forms.Button();
             this.button11_add_crc = new System.Windows.Forms.Button();
-            this.button11_line = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,8 +59,8 @@ namespace Figur1
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -104,7 +105,7 @@ namespace Figur1
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 129);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(321, 47);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(321, 92);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // button3
@@ -186,14 +187,16 @@ namespace Figur1
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.Fuchsia;
+            this.button10.BackColor = System.Drawing.SystemColors.Control;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(255, 3);
+            this.button10.ForeColor = System.Drawing.Color.Black;
+            this.button10.Location = new System.Drawing.Point(3, 39);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(30, 30);
+            this.button10.Size = new System.Drawing.Size(246, 36);
             this.button10.TabIndex = 7;
+            this.button10.Text = "Выбор цвета";
             this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button3_Click);
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // panel1
             // 
@@ -227,7 +230,7 @@ namespace Figur1
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button11_line);
+            this.panel2.Controls.Add(this.button11_add_trs);
             this.panel2.Controls.Add(this.button12_add_rec);
             this.panel2.Controls.Add(this.button11_add_crc);
             this.panel2.Controls.Add(this.flowLayoutPanel1);
@@ -240,9 +243,18 @@ namespace Figur1
             this.panel2.Size = new System.Drawing.Size(321, 450);
             this.panel2.TabIndex = 5;
             // 
+            // button11_add_trs
+            // 
+            this.button11_add_trs.Location = new System.Drawing.Point(41, 297);
+            this.button11_add_trs.Name = "button11_add_trs";
+            this.button11_add_trs.Size = new System.Drawing.Size(94, 29);
+            this.button11_add_trs.TabIndex = 0;
+            this.button11_add_trs.Text = "Triangle";
+            this.button11_add_trs.Click += new System.EventHandler(this.button11_add_trs_Click);
+            // 
             // button12_add_rec
             // 
-            this.button12_add_rec.Location = new System.Drawing.Point(41, 235);
+            this.button12_add_rec.Location = new System.Drawing.Point(41, 262);
             this.button12_add_rec.Name = "button12_add_rec";
             this.button12_add_rec.Size = new System.Drawing.Size(94, 29);
             this.button12_add_rec.TabIndex = 6;
@@ -252,23 +264,13 @@ namespace Figur1
             // 
             // button11_add_crc
             // 
-            this.button11_add_crc.Location = new System.Drawing.Point(41, 200);
+            this.button11_add_crc.Location = new System.Drawing.Point(41, 227);
             this.button11_add_crc.Name = "button11_add_crc";
             this.button11_add_crc.Size = new System.Drawing.Size(94, 29);
             this.button11_add_crc.TabIndex = 5;
             this.button11_add_crc.Text = "Circle";
             this.button11_add_crc.UseVisualStyleBackColor = true;
             this.button11_add_crc.Click += new System.EventHandler(this.button11_add_crc_Click);
-            // 
-            // button11_line
-            // 
-            /*this.button11_line.Location = new System.Drawing.Point(185, 200);
-            this.button11_line.Name = "button11_line";
-            this.button11_line.Size = new System.Drawing.Size(102, 29);
-            this.button11_line.TabIndex = 7;
-            this.button11_line.Text = "Line";
-            this.button11_line.UseVisualStyleBackColor = true;
-            this.button11_line.Click += new System.EventHandler(this.button11_Click);*/
             // 
             // Form1
             // 
@@ -310,7 +312,8 @@ namespace Figur1
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button12_add_rec;
         private System.Windows.Forms.Button button11_add_crc;
-        private System.Windows.Forms.Button button11_line;
+        private System.Windows.Forms.Button button11_add_trs;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
